@@ -2,9 +2,11 @@ import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from './authContext';
 import { Link } from "react-router-dom";
+import { MoviesContext } from './moviesContext'; //ADD THIS:import moviesContext 
 
 const LoginPage = props => {
   const context = useContext(AuthContext)
+  const moviesContext = useContext(MoviesContext)  //ADD THIS: create moviesContext constant
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,6 +19,7 @@ const LoginPage = props => {
   const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (context.isAuthenticated === true) {
+    moviesContext.setAuthenticated(context.isAuthenticated)  //ADD THIS: set the authenticated to true in movies context. Will result in movie data request.
     return <Redirect to={from} />;
   }
   return (
@@ -32,7 +35,7 @@ const LoginPage = props => {
       {/* Login web form  */}
       <button onClick={login}>Log in</button>
       <p>Not Registered?
-      <Link to="/signup">Sign Up!</Link></p>
+        <Link to="/signup">Sign Up!</Link></p>
     </>
   );
 };
