@@ -1,3 +1,5 @@
+
+
 export const signup = (email, password, firstName, lastName) => {
     return fetch('/api/accounts', {
         headers: {
@@ -8,7 +10,7 @@ export const signup = (email, password, firstName, lastName) => {
     }).then(res => res.json())
 };
 
-export const login = (email, password) => {
+export const login = async (email, password) => {
     return fetch('/api/accounts/security/token', {
         headers: {
             'Content-Type': 'application/json'

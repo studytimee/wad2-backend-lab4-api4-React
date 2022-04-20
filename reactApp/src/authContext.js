@@ -3,12 +3,14 @@ import { login, signup } from "./api/movie-api";
 
 export const AuthContext = createContext(null);
 
+
+
 const AuthContextProvider = (props) => {
   const existingToken = localStorage.getItem("token");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authToken, setAuthToken] = useState(existingToken);
   const [email, setEmail] = useState("");
-
+  
   //Function to put JWT token in local storage.
   const setToken = (data) => {
     localStorage.setItem("token", data);
@@ -18,8 +20,8 @@ const AuthContextProvider = (props) => {
   const authenticate = async (email, password) => {
     const result = await login(email, password);
     if (result.token) {
-      setToken(result.token)
       setIsAuthenticated(true);
+      setToken(result.token)
       setEmail(email);
     }
   };

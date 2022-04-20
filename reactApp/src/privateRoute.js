@@ -6,13 +6,13 @@ const PrivateRoute = props => {
   const context = useContext(AuthContext)
   // Destructure props from <privateRoute> 
   const { component: Component, ...rest } = props;
-  console.log(props.location)
   return context.isAuthenticated === true ? (
     <Route {...rest} render={props => <Component {...props} />} />
   ) : (
     <Redirect
       to={{
-        pathname: "/login"
+        pathname: "/login",
+        state: { from: props.location }
       }}
     />
   );
