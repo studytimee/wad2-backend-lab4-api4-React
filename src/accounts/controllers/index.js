@@ -8,9 +8,9 @@ export default (dependencies) => {
         const authHeader = request.headers.authorization;
 
         // Treatment
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            response.status(403).json({message:"Forbidden under treatment"});
-        }
+        // if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        //     response.status(403).json({message:"Forbidden under treatment"});
+        // }
         const accessToken = authHeader.split(" ")[1];
         await accountService.verifyToken(accessToken, dependencies);
         //output
