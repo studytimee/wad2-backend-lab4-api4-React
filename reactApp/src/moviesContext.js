@@ -5,16 +5,17 @@ export const MoviesContext = createContext(null);
 
 
 const MoviesContextProvider = props => {
-  const [movies,setMovies] = useState(null);
+  const [movies, setMovies] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
- if(authenticated){
-    getMovies().then(result => {
-      console.log(result);
-      setMovies(result);
-    });}
-  },[authenticated]);
+    if (authenticated) {
+      getMovies().then(result => {
+        console.log(result);
+        setMovies(result);
+      });
+    }
+  }, [authenticated]);
 
   return (
     <MoviesContext.Provider

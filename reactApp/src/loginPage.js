@@ -11,7 +11,9 @@ const LoginPage = props => {
   const [password, setPassword] = useState("");
 
   const login =  () => {
+    console.log("call login authenticate");
     context.authenticate(email, password);
+    console.log(`inside login function check is authenticated? ${context.isAuthenticated}`);
   };
 
   // Set 'from' to path where browser is redirected after a successful login.
