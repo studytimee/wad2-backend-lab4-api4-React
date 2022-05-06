@@ -1,5 +1,3 @@
-
-
 export const signup = (email, password, firstName, lastName) => {
     return fetch('/api/accounts', {
         headers: {
@@ -10,7 +8,7 @@ export const signup = (email, password, firstName, lastName) => {
     }).then(res => res.json())
 };
 
-export const login = async (email, password) => {
+export const login = (email, password) => {
     return fetch('/api/accounts/security/token', {
         headers: {
             'Content-Type': 'application/json'
@@ -29,4 +27,4 @@ export const getMovies = async () => {
     }
     )
     return res.json();
-};
+  };
