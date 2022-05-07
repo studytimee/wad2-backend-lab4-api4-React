@@ -24,16 +24,8 @@ git install
 ```
 
 ## API Configuration
-Describe any configuration that needs to take place before running the API. For example, creating an ``.env`` and what variables to put in it. Give an example of how this might be structured/done.
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE READ.ME., Just placeholders as indicated below:
-
-```bat
-NODE_ENV=development
-PORT=8080
-HOST=
-mongoDB=YourMongoURL
-secret=YourJWTSecret
-```
+Add .env file in the project root directory.
+(View .env file)[https://i.imgur.com/b5RgNyg.png]
 
 ## Start-up
 Describe how to start/stop the API. You could go though the ``scripts:`` property of the *package.json* file.
