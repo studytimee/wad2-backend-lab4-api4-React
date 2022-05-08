@@ -24,8 +24,11 @@ git install
 ```
 
 ## API Configuration
+__Add - .env File .__
 Add .env file in the project root directory.
-(View .env file)[https://i.imgur.com/b5RgNyg.png]
+![][dot_env]
+
+
 
 ## Start-up
 Describe how to start/stop the API. You could go though the ``scripts:`` property of the *package.json* file.
@@ -78,3 +81,10 @@ export const getMovies = () => {
 ## Independent learning.
 
 . . State the non-standard aspects of React/Express/Node (or other related technologies) that you researched and applied in this assignment . .  
+
+
+
+
+
+
+[dot_env]: https://i.imgur.com/b5RgNyg.png
