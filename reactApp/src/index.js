@@ -55,7 +55,7 @@ const App = () => {
                 <Route path="/reviews/:id" component={MovieReviewPage} />
                 <PrivateRoute exact path="/movies/favourites" component={FavouriteMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
-                <Route exact path="/" component={HomePage} />
+                <PrivateRoute exact path="/" component={HomePage} />
                 <Redirect from="*" to="/" />
               </Switch>
             </AuthContext>

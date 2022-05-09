@@ -18,6 +18,7 @@ export const login = (email, password) => {
     }).then(res => res.json())
 };
 
+// Security and Authentication: Check Valid Security token from local storage
 export const getMovies = async () => {
     const res = await fetch(
         '/api/movies', {
