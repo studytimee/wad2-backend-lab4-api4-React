@@ -23,9 +23,10 @@ const LoginPage = props => {
   // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
   const { from } = props.location.state || { from: { pathname: "/" } };
-
+  
   if (context.isAuthenticated === true) {
     console.log(`Is authentication granted? ${context.isAuthenticated}`);
+    console.log(`Redirect to ${from}`);
     moviesContext.setAuthenticated(context.isAuthenticated)  //ADD THIS: set the authenticated to true in movies context. Will result in movie data request.
     return <Redirect to={from} />;
 

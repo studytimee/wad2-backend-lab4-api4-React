@@ -14,6 +14,7 @@ const createMoviesRouter = (dependencies) => {
 
     router.route('/')
         .get(accountsController.verifyToken, moviesController.find);
+        console.log("verify token and call getMovies");
 
     router.route('/')
         .get(moviesController.find);
@@ -27,7 +28,8 @@ const createMoviesRouter = (dependencies) => {
         .post(moviesController.updateAccount);
 
     router.route('/upcoming')
-        .get(moviesController.getUpcomingMovies);
+        .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
+        console.log("verify token and call upcoming");
 
     return router;
 };

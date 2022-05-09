@@ -1,6 +1,6 @@
 import React from "react";
 import PageTemplate from '../components/templateMovieListPage'
-import { getUpComingMovies } from "../api/tmdb-api";
+import { getUpComingMovies } from "../api/movie-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import useFiltering from "../hooks/useFiltering";

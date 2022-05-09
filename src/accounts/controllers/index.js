@@ -15,8 +15,10 @@ export default (dependencies) => {
         await accountService.verifyToken(accessToken, dependencies);
         //output
         next();
+        console.log("Token verified!!!!!!")
     }catch(err){
         //Token Verification Failed
+        console.log("Token Failed!!!!!!")
         next(new Error(`Verification Failed ${err.message}`));
         }
     };

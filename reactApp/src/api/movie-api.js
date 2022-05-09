@@ -29,3 +29,15 @@ export const getMovies = async () => {
     )
     return res.json();
   };
+
+  export const getUpComingMovies = async () => {
+    const res = await fetch(
+        '/api/movies/upcoming', {
+            headers: {
+                'Authorization': window.localStorage.getItem('token')
+            }
+    }
+    )
+    return res.json();
+  };
+  
