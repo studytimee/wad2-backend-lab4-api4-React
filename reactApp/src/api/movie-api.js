@@ -55,3 +55,16 @@ export const getMovie = async (args) => {
     )
     return res.json();
 };
+
+export const getMovieReviews = async (id) => {
+    console.log("getMovie/{id} Reviews invoked from movie-api")
+    const res = await fetch(
+        `/api/movies/${id}/reviews`, {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+  };
+  
