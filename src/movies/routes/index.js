@@ -14,12 +14,12 @@ const createMoviesRouter = (dependencies) => {
 
     router.route('/')
         .get(accountsController.verifyToken, moviesController.find);
-        console.log("verify token and call getMovies");
+    console.log("verify token and call getMovies");
 
     router.route('/')
         .get(moviesController.find);
 
-
+    // api/movies/{moive-id}
     router.route('/:id')
         .get(moviesController.getMovie);
 
@@ -29,7 +29,8 @@ const createMoviesRouter = (dependencies) => {
 
     router.route('/upcoming')
         .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
-        console.log("verify token and call upcoming");
+    console.log("verify token and call upcoming");
+
 
     return router;
 };

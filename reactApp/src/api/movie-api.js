@@ -22,22 +22,36 @@ export const login = (email, password) => {
 export const getMovies = async () => {
     const res = await fetch(
         '/api/movies', {
-            headers: {
-                'Authorization': window.localStorage.getItem('token')
-            }
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
     }
     )
     return res.json();
-  };
+};
 
-  export const getUpComingMovies = async () => {
+export const getUpComingMovies = async () => {
     const res = await fetch(
         '/api/movies/upcoming', {
-            headers: {
-                'Authorization': window.localStorage.getItem('token')
-            }
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
     }
     )
     return res.json();
-  };
-  
+};
+
+
+export const getMovie = async (args) => {
+    console.log("getMovie invoked from movie-api")
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    const res = await fetch(
+        `/api/movies/${id}`, {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};

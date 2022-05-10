@@ -4,6 +4,7 @@ import Account from '../entities/Accounts';
 
 export default {
     getMovie: async (movieId) => {
+        console.log("invoke movie by id from TMDB via custom design API")
         const response = await axios.get(
             `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.TMDB_KEY}`
           );
