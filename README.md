@@ -10,6 +10,49 @@ Give a brief overview of the Web API functionality.
 
 Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
 
+|  **Software Versions**                                    |
+| ----------------------------------------------------------|   
+| node --version                                            |
+|   v16.14.0                                                |
+| npm --version                                             |
+|   8.3.1                                                   |
+| C:\Program Files\MongoDB\Server\5.0\bin>mongod --version  |
+|   db version v5.0.6                                       |
+|                                                           |
+
+
+|  **Node packages installed during development**                 |
+| ----------------------------------------------------------------|   
+| Install node.js  (v16.14.0)                                     |
+| npm install --save-dev babel-cli                                |
+| npm install -g babel-cli                                        |
+| npm install --save-dev babel-preset-env                         |
+| npm install --save-dev nodemon                                  |
+| npm install dotenv --save                                       |
+| npm install --save-dev eslint babel-eslint                      |
+| npx eslint index.js                                             |
+| install postman in your machine                                 |
+| npm install --save uniqid                                       |
+| npm install -save axios                                         |
+| npm install -save mongoose                                      |
+| npm install -save joi                                           |
+| npm install --save passport passport-jwt jsonwebtoken bcryptjs  |
+| npm install --save-dev newman                                   |
+| npm install --save-dev newman-reporter-htmlextra                |
+
+
+| **Added files in the root directory during development**        |
+| ----------------------------------------------------------------|   
+| create a file called .babelrc in the root folder                |
+|   enter in the following:                                       |
+|   {                                                             |
+|   "presets": ["env"]                                            |
+|   }                                                             |
+|                                                                 |
+| Add below line in the .env file                                 |
+| JWT_SECRET_KEY=ilikecake                                        |
+|                                                                 |
+
 
 Describe getting/installing the software, perhaps:
 
