@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "newman run ./tests/collection1.json -e ./tests/env1.json --reporters htmlextra,cli"
+    "test": "newman run ./tests/collection2.json -e ./tests/env1.json --reporters htmlextra,cli"
   },
   "repository": {
     "type": "git",
