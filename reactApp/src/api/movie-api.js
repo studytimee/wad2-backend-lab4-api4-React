@@ -66,5 +66,17 @@ export const getMovieReviews = async (id) => {
     }
     )
     return res.json();
-  };
-  
+};
+
+
+export const getSimilarMovies = async (id) => {
+    console.log("get similar movies invoked from movie-api")
+    const res = await fetch(
+        `/api/movies/${id}/similar`, {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};

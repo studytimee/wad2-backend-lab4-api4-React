@@ -2,12 +2,12 @@ import express from 'express';
 import { movies, movieDetails, movieReviews, genres } from './moviesData';
 import uniqid from 'uniqid'
 
- const router = express.Router();
- router.get('/', (req, res) => {
-     res.json(movies);
- });
+const router = express.Router();
+router.get('/', (req, res) => {
+    res.json(movies);
+});
 
- // Get movie genres
+// Get movie genres
 router.get('/genres', (req, res) => {
     res.json(genres);
 });

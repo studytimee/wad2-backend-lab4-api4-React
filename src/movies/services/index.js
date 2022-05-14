@@ -34,6 +34,14 @@ export default {
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false`
     );
     return response.data;
+  },
+
+  getMovieSimilar: async (movieId) => {
+    console.log("invoke similar movie as similar to another movide id from TMDB via custom design API")
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.TMDB_KEY}`
+    );
+    return response.data;
   }
 
 };

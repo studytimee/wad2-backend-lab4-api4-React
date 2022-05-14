@@ -28,6 +28,11 @@ const createMoviesRouter = (dependencies) => {
         .get(moviesController.getMovieReviews);
 
 
+    // api/movies/{movie-id}/similar
+    router.route('/:id/similar')
+        .get(moviesController.getMovieSimilar);
+
+
     router.route('/:id')
         .post(moviesController.updateAccount);
 

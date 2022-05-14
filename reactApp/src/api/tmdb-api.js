@@ -129,7 +129,7 @@ export const getNowPlayingMovies = () => {
 };
 
 export const getCelebrities = (args) => {
-  const [ pagePart] = args.queryKey;
+  const [pagePart] = args.queryKey;
   const { page } = pagePart;
   return fetch(
     `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${page}`
@@ -146,7 +146,7 @@ export const getCelebrities = (args) => {
 
 //parameterised routes, celebrity id is required to fetch celebrity details.
 export const getCelebrity = (args) => {
-  const [ ,idPart] = args.queryKey;
+  const [, idPart] = args.queryKey;
   const { id } = idPart;
   return fetch(
     `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`

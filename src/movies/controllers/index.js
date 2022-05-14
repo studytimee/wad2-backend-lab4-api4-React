@@ -41,11 +41,18 @@ export default (dependencies) => {
         response.status(200).json(movieReviews);
     };
 
+    const getMovieSimilar = async (request, response, next) => {
+        const movieId = request.params.id;
+        const movieSimilar = await moviesService.getMovieSimilar(movieId, dependencies);
+        response.status(200).json(movieSimilar);
+    };
+
     return {
         getMovie,
         find,
         updateAccount,
         getUpcomingMovies,
-        getMovieReviews
+        getMovieReviews,
+        getMovieSimilar
     };
 };
