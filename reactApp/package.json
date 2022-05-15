@@ -10,6 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.8.4",
+    "react-navigation-drawer": "^2.7.2",
     "react-query": "^3.13.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
@@ -49,5 +50,6 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "html-webpack-plugin": "^5.5.0"
-  }
-  ,"proxy":"http://localhost:8080"}
+  },
+  "proxy": "http://localhost:8080"
+}
