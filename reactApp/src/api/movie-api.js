@@ -80,3 +80,15 @@ export const getSimilarMovies = async (id) => {
     )
     return res.json();
 };
+
+export const getTopRatedMovies = async () => {
+    const res = await fetch(
+        '/api/movies/top_rated', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+

@@ -40,6 +40,10 @@ const createMoviesRouter = (dependencies) => {
         .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
     console.log("verify token and call upcoming");
 
+    router.route('/top_rated')
+        .get(accountsController.verifyToken, moviesController.getTopRatedMovies);
+    console.log("verify token and call getMovies");
+
 
     return router;
 };

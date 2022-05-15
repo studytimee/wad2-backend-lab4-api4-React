@@ -47,12 +47,30 @@ export default (dependencies) => {
         response.status(200).json(movieSimilar);
     };
 
+    // const getTopRatedMovies = async (request, response, next) => {
+    //     //TODO: You implement the rest
+    //     const topRatedMovies = await moviesService.getTopRatedMovies(dependencies);
+    //     //output
+    //     response.status(200).json(topRatedMovies);
+    // };
+
+    const getTopRatedMovies = async (request, response, next) => {
+        //input
+        const query = request.query;
+        // Treatment
+        console.log("Top rated movies controller");
+        const topRatedMovies = await moviesService.getTopRatedMovies(query, dependencies);
+        //output
+        response.status(200).json(topRatedMovies);
+    };
+
     return {
         getMovie,
         find,
         updateAccount,
         getUpcomingMovies,
         getMovieReviews,
-        getMovieSimilar
+        getMovieSimilar,
+        getTopRatedMovies
     };
 };
