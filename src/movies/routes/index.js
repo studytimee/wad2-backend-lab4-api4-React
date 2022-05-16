@@ -13,19 +13,25 @@ const createMoviesRouter = (dependencies) => {
         .all(accountsController.verifyToken); //ADD THIS: require token for all routes
 
     router.route('/')
-        .get(accountsController.verifyToken, moviesController.find);
-    console.log("verify token and call getMovies");
+        .get(moviesController.find);
 
     router.route('/')
-        .get(moviesController.find);
+        .get(accountsController.verifyToken, moviesController.find);
+
+
+    //api/movies/top_rated
+    router.route('/top_rated')
+        .get(accountsController.verifyToken, moviesController.getTopRatedMovies);
+
 
     // api/movies/{moive-id}
     router.route('/:id')
-        .get(moviesController.getMovie);
+        .get(accountsController.verifyToken, moviesController.getMovie);
+        
 
     // api/movies/{movie-id}/reviews
     router.route('/:id/reviews')
-        .get(moviesController.getMovieReviews);
+        .get(accountsController.verifyToken,moviesController.getMovieReviews);
 
 
     // api/movies/{movie-id}/similar
@@ -38,11 +44,8 @@ const createMoviesRouter = (dependencies) => {
 
     router.route('/upcoming')
         .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
-    console.log("verify token and call upcoming");
+   
 
-    router.route('/top_rated')
-        .get(accountsController.verifyToken, moviesController.getTopRatedMovies);
-    console.log("verify token and call getMovies");
 
 
     return router;

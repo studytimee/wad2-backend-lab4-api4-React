@@ -3,21 +3,25 @@ import Account from '../entities/Accounts';
 
 
 export default {
+
   getMovieReviews: async (movieId) => {
-    console.log("invoke movieReview by id from TMDB via custom design API")
+    console.log("API Service Call: get movie reviews by id")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${process.env.TMDB_KEY}`
     );
     return response.data;
   },
+
   getMovie: async (movieId) => {
-    console.log("invoke movie by id from TMDB via custom design API")
+    console.log("API Service Call: get movie by id")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.TMDB_KEY}`
     );
     return response.data;
   },
+
   find: async (query) => {
+    console.log("API Service Call: discover movies")
     const response = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false&${query}`
     );
@@ -30,6 +34,7 @@ export default {
   },
 
   findUpcoming: async () => {
+    console.log("API Service Call: up coming")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false`
     );
@@ -37,7 +42,7 @@ export default {
   },
 
   getMovieSimilar: async (movieId) => {
-    console.log("invoke similar movie as similar to another movide id from TMDB via custom design API")
+    console.log("API Service Call: similar movies")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.TMDB_KEY}`
     );
@@ -45,6 +50,7 @@ export default {
   },
 
   getTopRatedMovies: async (query) => {
+    console.log("API Service Call: top rated")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false&${query}`
     );
