@@ -47,11 +47,11 @@ const App = () => {
                 <Route exact path="/signup" component={SignUpPage} />
                 <Route path="/actors/home" component={CelebritiesHomePage} />
                 <Route path="/actors/:id" component={CelebrityDetailsPage} />
-                <Route exact path="/movies/now-playing" component={NowPlayingMoviesPage} />
+                <PrivateRoute exact path="/movies/now-playing" component={NowPlayingMoviesPage} />
                 <PrivateRoute exact path="/movies/top-rated" component={TopRatedMoviesPage} />
                 <PrivateRoute exact path="/movies/watchList" component={WatchListPage} />
                 <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-                <Route exact path="/movies/upcoming" component={UpComingMoviesPage} />
+                <PrivateRoute exact path="/movies/upcoming" component={UpComingMoviesPage} />
                 <Route path="/reviews/:id" component={MovieReviewPage} />
                 <PrivateRoute exact path="/movies/favourites" component={FavouriteMoviesPage} />
                 <Route path="/movies/:id" component={MoviePage} />
