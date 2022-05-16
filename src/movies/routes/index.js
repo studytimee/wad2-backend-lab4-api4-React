@@ -40,9 +40,10 @@ const createMoviesRouter = (dependencies) => {
 
     // api/movies/{movie-id}/similar
     router.route('/:id/similar')
-        .get(moviesController.getMovieSimilar);
+        .get(accountsController.verifyToken, moviesController.getMovieSimilar);
 
 
+    
     router.route('/:id')
         .post(moviesController.updateAccount);
 
