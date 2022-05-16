@@ -21,6 +21,10 @@ const createMoviesRouter = (dependencies) => {
     router.route('/top_rated')
         .get(accountsController.verifyToken, moviesController.getTopRatedMovies);
 
+    //api/movies/now-playing
+    router.route('/now_playing')
+        .get(accountsController.verifyToken, moviesController.getNowPlayingMovies);
+
     //api/movies/upcoming
     router.route('/upcoming')
         .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
@@ -40,13 +44,14 @@ const createMoviesRouter = (dependencies) => {
     router.route('/:id/similar')
         .get(accountsController.verifyToken, moviesController.getMovieSimilar);
 
+    
 
     
     router.route('/:id')
         .post(moviesController.updateAccount);
 
    
-
+    
 
 
     return router;

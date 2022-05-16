@@ -58,10 +58,20 @@ export default (dependencies) => {
         //input
         const query = request.query;
         // Treatment
-        console.log("Top rated movies controller");
+        console.log("Controller: Top Rated");
         const topRatedMovies = await moviesService.getTopRatedMovies(query, dependencies);
         //output
         response.status(200).json(topRatedMovies);
+    };
+
+    const getNowPlayingMovies = async (request, response, next) => {
+        //input
+        const query = request.query;
+        // Treatment
+        console.log("Controller: Now Playing");
+        const nowPlayingMovies = await moviesService.getNowPlayingMovies(query, dependencies);
+        //output
+        response.status(200).json(nowPlayingMovies);
     };
 
     return {
@@ -71,6 +81,7 @@ export default (dependencies) => {
         getUpcomingMovies,
         getMovieReviews,
         getMovieSimilar,
-        getTopRatedMovies
+        getTopRatedMovies,
+        getNowPlayingMovies
     };
 };

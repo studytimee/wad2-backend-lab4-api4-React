@@ -92,3 +92,16 @@ export const getTopRatedMovies = async () => {
     return res.json();
 };
 
+
+export const getNowPlayingMovies = async () => {
+    console.log("get now playing movies invoked from movie-api")
+    const res = await fetch(
+        '/api/movies/now_playing', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+  
