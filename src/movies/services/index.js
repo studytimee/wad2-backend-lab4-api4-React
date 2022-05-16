@@ -33,7 +33,7 @@ export default {
     return accountsRepository.merge(account);
   },
 
-  findUpcoming: async () => {
+  getUpcomingMovies: async () => {
     console.log("API Service Call: up coming")
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false`

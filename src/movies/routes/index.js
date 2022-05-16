@@ -23,6 +23,10 @@ const createMoviesRouter = (dependencies) => {
     router.route('/top_rated')
         .get(accountsController.verifyToken, moviesController.getTopRatedMovies);
 
+    //api/movies/upcoming
+    router.route('/upcoming')
+        .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
+
 
     // api/movies/{moive-id}
     router.route('/:id')
@@ -42,8 +46,6 @@ const createMoviesRouter = (dependencies) => {
     router.route('/:id')
         .post(moviesController.updateAccount);
 
-    router.route('/upcoming')
-        .get(accountsController.verifyToken, moviesController.getUpcomingMovies);
    
 
 
