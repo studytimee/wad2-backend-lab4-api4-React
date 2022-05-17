@@ -30,6 +30,7 @@ const SignupPage = props => {
       console.log("reg")
       context.register(email, password, firstName, lastName);
       setRegistered(true);
+      
     }
   }
 

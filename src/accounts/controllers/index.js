@@ -81,6 +81,24 @@ export default (dependencies) => {
             const id = request.params.id;
             const account = await accountService.addFavourite(id, movieId, dependencies);
             response.status(200).json("Inside addFavourite controller");
+            //response.status(200).json(account);
+            
+        } catch (err) {
+            next(new Error(`Invalid Data ${err.message}`));
+        }
+    };
+
+    const addFavouriteByEmail = async (request, response, next) => {
+        try {
+            //const { movieId } = request.body;
+            // const  movieId  = request.params.favourites;
+            // console.log("Call account controller movie Id: ", movieId)
+            const email = request.params.email;
+            // console.log("Call account controller email: ", email)
+            const { movieId } = request.body;
+            console.log("Call account controller movie Id: ", movieId)
+            const account = await accountService.addFavouriteByEmail(email, movieId, dependencies);
+            response.status(200).json("Inside addFavourite2 controller");
             response.status(200).json(account);
             
         } catch (err) {
@@ -108,6 +126,7 @@ export default (dependencies) => {
         listAccounts,
         authenticateAccount,
         addFavourite,
+        addFavouriteByEmail,
         getFavourites,
         createGenres,
         getGenres,

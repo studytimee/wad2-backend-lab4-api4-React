@@ -33,6 +33,7 @@ import Account from '../../entities/Accounts';
           return accountEntity;
       }
 
+    
       async remove(userId) {
           return this.model.findOneAndDelete(userId);
       }

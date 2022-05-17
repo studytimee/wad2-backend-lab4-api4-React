@@ -39,19 +39,33 @@ export default {
   },
 
   addFavourite: async (accountId, movieId, { accountsRepository }) => {
+    //console.log("Service Call Account Id:", accountId);
     const account = await accountsRepository.get(accountId);
-   account.favourites.push(movieId);
+    account.favourites.push(movieId);
+    console.log("Service Call Account:", account);
     return await accountsRepository.merge(account);
+  },
+
+  addFavouriteByEmail: async (accountEmail, movieId, { accountsRepository }) => {
+    //console.log("Service Call Account Email:", accountEmail);
+    const acc = await accountsRepository.getByEmail(accountEmail);
+    //console.log("Service Call Get full account:", acc);
+    //console.log("Service Call Get Email from account:", acc.email);
+    acc.favourites.push(movieId);
+    //console.log("Service Call Get Favourite:", acc.favourites);
+    console.log("Service Call acc:", acc);
+    return await accountsRepository.merge(acc);
 
   },
 
-  verifyToken:   async (token,{accountsRepository, tokenManager}) => {
+
+  verifyToken: async (token, { accountsRepository, tokenManager }) => {
     const decoded = await tokenManager.decode(token);
     const user = await accountsRepository.getByEmail(decoded.email);
     if (!user) {
-        throw new Error('Bad token');
+      throw new Error('Bad token');
     }
     return user.email;
-}
+  }
 
 };

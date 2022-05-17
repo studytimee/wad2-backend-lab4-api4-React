@@ -104,4 +104,27 @@ export const getNowPlayingMovies = async () => {
     )
     return res.json();
 };
-  
+
+// export const getFavourites = (id) => {
+//     console.log("Get favorites from user account")
+//     return fetch(
+//         `/api/account/${id}/favourites`, {
+//         headers: {
+//             'Authorization': window.localStorage.getItem('token')
+//         }
+//     }
+//     ).then(res => res.json());
+// };
+
+
+export const addFavourite = (movieId, email) => {
+    console.log("movie id: ", movieId)
+    return fetch(`/api/accounts/${email}/favouritesByEmail`, {
+        headers: {
+           // 'Content-Type': 'application/json',
+            //'Authorization': window.localStorage.getItem('token')
+        },
+        method: 'post',
+        body: JSON.stringify({ movieId: movieId, email : email })
+    }).then(res => res.json())
+};

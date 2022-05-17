@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "react-query";
-import { getMovie } from "../api/movie-api";
+import { getMovie, addFavourite } from "../api/movie-api";
 import Spinner from "../components/spinner";
 import useFiltering from "../hooks/useFiltering";
 import MovieFilterUI, { titleFilter } from "../components/movieFilterUI";
 import RemoveFromFavourites from "../components/cardIcons/removeFromFavourites";
 import WriteReview from "../components/cardIcons/writeReview";
+import { AuthContext } from '../contexts/authContext';
+
 
 const titleFiltering = {
   name: "title",
@@ -25,12 +27,15 @@ export const genreFiltering = {
 };
 
 const FavouriteMoviesPage = () => {
+  const context = useContext(AuthContext);
   const { favourites: movieIds } = useContext(MoviesContext);
   const { watchLists: wListmovieIds } = useContext(MoviesContext);
   const { filterValues, setFilterValues, filterFunction } = useFiltering(
     [],
     [titleFiltering, genreFiltering]
   );
+
+    context.registerFavourite(movieIds);
 
   // Create an array of queries and run in parallel.
   const favouriteMovieQueries = useQueries(

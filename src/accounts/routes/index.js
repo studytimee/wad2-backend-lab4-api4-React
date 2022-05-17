@@ -41,6 +41,13 @@ const createRouter = (dependencies) => {
     router.route('/:id/favourites')
         .get(accountsController.getFavourites);
 
+
+    router.route('/:email/favouritesByEmail')
+        .post(accountsController.addFavouriteByEmail);
+
+    router.route('/:email/favourites')
+        .get(accountsController.getFavourites);
+
     return router;
 };
 export default createRouter;
