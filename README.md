@@ -154,7 +154,21 @@ __Authentication - Password encrypted .__
 
 ### Design
 
-.. Give details of the database you used and the Collections. Highlight any extra work you did, for example new Mongo Collections/Entities/Services/Controllers and routers or any changes/additions to existing components.
+__Add Movie ID into User's Favourites__
+```bat
+The favourites entities located in the account table in mondoDB.
+```
+
+| PATH                                     | GET           | POST                          | PUT  | DELETE |
+| ---------------------------------------- | ------------- | ----------------------------- | ---- | ------ |
+| /api/accounts/${email}/favouritesByEmail |               | Add movie id into favourites  | N/A  | N/A    |
+
+```bat
+In this api design, email is used as a unique key to add movie ID to user's favourites.
+This unique email route from the client side and locate the user account that belong to unique email address.
+```
+![][design_add_movieId_in_fav]
+
 
 
 ## Integrating with React App
