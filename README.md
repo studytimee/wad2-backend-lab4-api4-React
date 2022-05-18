@@ -14,8 +14,6 @@ Name: Abid Ali
 
 ## Installation Requirements
 
-Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
-
 __Git Commands__
 ```bat
 git install
@@ -89,7 +87,31 @@ Add .env file in the project root directory.
 
 
 ## Start-up
-Describe how to start/stop the API. You could go though the ``scripts:`` property of the *package.json* file.
+
+__Start Backend - Server__
+
+File package.json file in the server project root directory.
+![][start_backend]
+
+
+__Start Client App - reatApp__
+
+File package.json file in the reactApp project root directory.
+![][start_reactApp]
+
+__Start Test - Scripts__
+
+File package.json file in the server project root directory.
+![][start_test]
+
+
+__Test - Report__
+
+Test report .html file located in newman in project root directory.
+![][test_report]
+
+
+
 
 ## API Design
 Give an overview of your web API design. If you have your design in Swagger, you can link it or you could use ``npx swagger-markdown -i ./your_swagger_file.yaml`` to generate a markdown version of it. 
