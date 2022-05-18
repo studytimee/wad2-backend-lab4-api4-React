@@ -12,13 +12,33 @@ Name: Abid Ali
 + Proxy routes to custom design api's
 + Private Routes: 6 Private routing
 
-
 ## Installation Requirements
 
 Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
 
-|  **Software Versions**                                    |
-| ----------------------------------------------------------|   
+__Git Commands__
+```bat
+git install
+git clone https://github.com/studytimee/wad2-moviesApp-MERN.git
+```
+
+__Node Package Manager (npm) Commands__
+```bat
+npm install
+Install the npm in the project root folder and reactApp folder.
+```
+![][npm_install]
+
+__Server Proxy__
+```bat
+"proxy": "http://localhost:8080"
+Make sure server proxy added in the package.json file
+```
+![][package_proxy]
+
+
+__Software Versions__                                    
+```bat
 | node --version                                            |
 |   v16.14.0                                                |
 | npm --version                                             |
@@ -26,10 +46,10 @@ Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB i
 | C:\Program Files\MongoDB\Server\5.0\bin>mongod --version  |
 |   db version v5.0.6                                       |
 |                                                           |
+```
 
-
-|  **Node packages installed during development**                 |
-| ----------------------------------------------------------------|   
+__Node Packages__
+```bat
 | Install node.js  (v16.14.0)                                     |
 | npm install --save-dev babel-cli                                |
 | npm install -g babel-cli                                        |
@@ -46,32 +66,20 @@ Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB i
 | npm install --save passport passport-jwt jsonwebtoken bcryptjs  |
 | npm install --save-dev newman                                   |
 | npm install --save-dev newman-reporter-htmlextra                |
+```
 
-
-| **Added files in the root directory during development**        |
-| ----------------------------------------------------------------|   
+__Create files in the root directory__                          
+```bat
 | create a file called .babelrc in the root folder                |
 |   enter in the following:                                       |
 |   {                                                             |
 |   "presets": ["env"]                                            |
 |   }                                                             |
 |                                                                 |
-| Add below line in the .env file                                 |
-| JWT_SECRET_KEY=ilikecake                                        |
 |                                                                 |
-
-
-Describe getting/installing the software, perhaps:
-
-```bat
-git clone http:\myrepo.git
 ```
 
-followed by installation
 
-```bat
-git install
-```
 
 ## API Configuration
 __Add - .env File .__
@@ -138,3 +146,21 @@ export const getMovies = () => {
 
 
 [dot_env]: https://i.imgur.com/b5RgNyg.png
+[dot_env_reactApp]: https://i.imgur.com/Ey1xmwh.png
+
+
+[start_reactApp]: https://i.imgur.com/uMrQOJm.png
+[start_backend]: https://i.imgur.com/Jazg7Nd.png
+[start_test]: https://i.imgur.com/XSaCWY2.png
+[test_report]: https://i.imgur.com/1M2Q7GT.png
+
+[private_route]: https://i.imgur.com/ph45gt1.png
+
+[npm_install]: https://i.imgur.com/OYZltcD.png
+[package_proxy]: https://i.imgur.com/JpAhgYN.png
+
+
+
+[API-integration]: ./images/API_Integration-5.png
+[hashed-before-saved]: ./images/encrypted-password.png
+[design_add_movieId_in_fav]: ./images/00_add_movieId_into_Favourite.png
