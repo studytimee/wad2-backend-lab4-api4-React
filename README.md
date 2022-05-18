@@ -81,8 +81,15 @@ __Create files in the root directory__
 
 ## API Configuration
 __Add - .env File .__
+
+```bat
+Go to TMDB website and Create a an account and get the TMDB API KEY and save in to a .env file.
+```
 Add .env file in the project root directory.
 ![][dot_env]
+
+Add .env file in the reactApp root directory.
+![][dot_env_reactApp]
 
 
 
