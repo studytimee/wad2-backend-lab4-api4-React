@@ -115,7 +115,6 @@ Test report .html file located in newman in project root directory.
 
 ## API Design
 
-Alternatively, you could also do similar to the following: 
 
 | PATH                          | GET                       | POST                          | PUT  | DELETE |
 | ----------------------------- | ------------------------- | ----------------------------- | ---- | ------ |
@@ -131,7 +130,27 @@ Alternatively, you could also do similar to the following:
 
 ## Security and Authentication
 
-.. Give details of any authentication/ security implemented on the API. Indicate which routes are protected.
+
+__Authentication - API Integration.__
+![][API-integration]
+>The client App provides a mechanism for working with an server API's.
+
+>The Client app makes an API request to localhost:3000, the Webpack development server. The development server then proxies that request to the API server.
+
+#### Proxy Server
+>To have the React development server proxy our API requests to our Express API server, we need to add the following to the package.json file for the React Application
+
+>This proxy server forward any request that not present in the client resource to the Express API listening on port 8080.
+
+__Private - Route .__
+![][private_route]
+> Used jWT token for authorization.
+
+
+__Authentication - Password encrypted .__
+![][hashed-before-saved]
+> In the background the passwords are being hashed before being saved in to the database.
+
 
 ### Design
 
