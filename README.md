@@ -1,10 +1,17 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Abid Ali
 
-## Overview
+### Overrview.
 
-Give a brief overview of the Web API functionality.
++ Web API Design (Express routing, Parameterised URLs)
++ Express Framework (Routers, Controllers, Services, Entities and Repositories)
++ Validation using JOI, Jason WEB Token, Password validation and encryption.
++ Registration and authentication of user account, authentication on routes. 
++ React API Integration, react authentication context.
++ Proxy routes to custom design api's
++ Private Routes: 6 Private routing
+
 
 ## Installation Requirements
 
