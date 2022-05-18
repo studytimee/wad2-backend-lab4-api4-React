@@ -114,18 +114,20 @@ Test report .html file located in newman in project root directory.
 
 
 ## API Design
-Give an overview of your web API design. If you have your design in Swagger, you can link it or you could use ``npx swagger-markdown -i ./your_swagger_file.yaml`` to generate a markdown version of it. 
-
-[SwaggerHub Doc](https://app.swaggerhub.com/apis-docs/fxwalsh/MovieeAPI/1.0)
 
 Alternatively, you could also do similar to the following: 
 
 | PATH                          | GET                       | POST                          | PUT  | DELETE |
 | ----------------------------- | ------------------------- | ----------------------------- | ---- | ------ |
-| /api/movies                   | Gets a list of movies     | Add A Movie                   | N/A  | N/A    |
-| /api/movies/{movieid}         | Get a Movie               | N/A                           | N/A  | N/A    |
-| /api/movies/{movieid}/reviews | Get all reviews for movie | Create a new review for Movie | N/A  | N/A    |
-| ...                           | ...                       | ...                           | ...  | ...    |
+| /api/movies                   | Gets a list of movies     | N/A                           | N/A  | N/A    |
+| /api/movies/${id}             | Get a Movie               | N/A                           | N/A  | N/A    |
+| /api/movies/upcoming          | getUpComingMovies         | N/A                           | N/A  | N/A    |
+| /api/movies/${id}/reviews     | getMovieReviews           | N/A                           | N/A  | N/A    |
+| /api/movies/${id}/similar     | getSimilarMovies          | N/A                           | N/A  | N/A    |
+| /api/movies/top_rated         | getTopRatedMovies         | N/A                           | N/A  | N/A    |
+| /api/movies/now_playing       | getNowPlayingMovies       | N/A                           | N/A  | N/A    |
+| /api/accounts                 | signup                    | N/A                           | N/A  | N/A    |
+| /api/accounts/security/token  | login                     | N/A                           | N/A  | N/A    |
 
 ## Security and Authentication
 
