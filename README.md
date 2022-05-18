@@ -175,29 +175,107 @@ This unique email route from the client side and locate the user account that be
 
 Describe how you integrated your React app with the API. Perhaps link to the React App repo and give an example of an API call from React App. For example: 
 
+__Integrated Sign Up.__
 ~~~Javascript
-export const getMovies = () => {
-  return fetch(
-     '/api/movies',{headers: {
-       'Authorization': window.localStorage.getItem('token')
-    }
-  }
-  )
-    .then(res => res.json())
-    .then(json => {return json.results;});
+export const signup = (email, password, firstName, lastName) => {
+    return fetch('/api/accounts', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ email: email, password: password, firstName: firstName, lastName: lastName })
+    }).then(res => res.json())
 };
-
 ~~~
 
-## Extra features
+__Integrate Login__
+~~~Javascript
+export const login = (email, password) => {
+    return fetch('/api/accounts/security/token', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({ email: email, password: password })
+    }).then(res => res.json())
+};
+~~~
 
-. . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app  
 
-## Independent learning.
+__Integrate Get Movies__
+~~~Javascript
+export const getMovies = async () => {
+    const res = await fetch(
+        '/api/movies', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+~~~
 
-. . State the non-standard aspects of React/Express/Node (or other related technologies) that you researched and applied in this assignment . .  
+__Integrate Get Movie__
+~~~Javascript
+export const getMovie = async (args) => {
+    console.log("getMovie invoked from movie-api")
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    const res = await fetch(
+        `/api/movies/${id}`, {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+~~~
 
 
+__Integrate Get Upcoming Movies__
+~~~Javascript
+export const getUpComingMovies = async () => {
+    const res = await fetch(
+        '/api/movies/upcoming', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+~~~
+
+__Integrate Get Top Rated Movies__
+~~~Javascript
+export const getTopRatedMovies = async () => {
+    const res = await fetch(
+        '/api/movies/top_rated', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+~~~
+
+__Integrate Get Now Playing Movies__
+~~~Javascript
+export const getNowPlayingMovies = async () => {
+    console.log("get now playing movies invoked from movie-api")
+    const res = await fetch(
+        '/api/movies/now_playing', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    }
+    )
+    return res.json();
+};
+~~~
 
 
 
